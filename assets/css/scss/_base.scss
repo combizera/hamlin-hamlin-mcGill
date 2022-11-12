@@ -1,0 +1,70 @@
+// Colors
+$blue-light: #778da9;
+$blue-normal: #415a77;
+$blue-dark: #1b263b;
+
+$bg-light: #fff;
+$bg-normal: #e0e1dd;
+
+$orange-grad: linear-gradient(181.93deg, #e9a051 1.63%, #eab57b 98.38%);
+
+// Responsive
+$container-xl: 1440px;
+$container-l: 1140px;
+$container-m: 960px;
+$container-s: 540px;
+
+@mixin responsive($device) {
+  @if $device == xl {
+    // For resolutions upper than 1440px
+    @media screen and (min-width: $container-xl) {
+      @content;
+    }
+  } @else if $device == l {
+    // For resolutions between 1140px and 1440px
+    @media screen and (max-width: $container-xl) and (min-width: $container-l) {
+      @content;
+    }
+  } @else if $device == m {
+    // For resolutions beetwen 960px and 1140px
+    @media screen and (max-width: $container-l) and (min-width: $container-m) {
+      @content;
+    }
+  } @else if $device == s {
+    // For resolutions less than 960px
+    @media screen and (max-width: $container-m) {
+      @content;
+    }
+  } @else if $device == xs {
+    // For resolutions less than 540px
+    @media screen and (max-width: $container-s) {
+      @content;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+// Elements
+.btn-pri {
+  background: linear-gradient(181.93deg, #e9a051 2%, #eab57b 98%);
+  box-shadow: 0px 23px 56px rgba(233, 160, 81, 0.19),
+    0px 6.93383px 16.8824px rgba(233, 160, 81, 0.123802),
+    0px 2.87996px 7.01207px rgba(233, 160, 81, 0.095),
+    0px 1.04162px 2.53613px rgba(233, 160, 81, 0.0661981);
+  border-radius: 2px;
+  padding: 1rem 2rem;
+  transition: 0.5s ease;
+  color: $bg-normal;
+  text-transform: uppercase;
+  &:hover {
+    transform: scale(1.1);
+    background: linear-gradient(181.93deg, #dd9447 2%, #dda76f 98%);
+    box-shadow: 0px 25px 56px rgba(233, 160, 81, 0.25),
+      0px 6.93383px 16.8824px rgba(233, 160, 81, 0.15),
+      0px 2.87996px 7.01207px rgba(233, 160, 81, 0.12),
+      0px 1.04162px 2.53613px rgba(233, 160, 81, 0.08);
+  }
+}

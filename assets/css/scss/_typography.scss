@@ -1,0 +1,132 @@
+// Tipografias
+// PT Serif
+@mixin typeface-1($size, $device: desktop) {
+  font-family: "PT Serif", serif;
+
+  // H2
+  @if $size == h2 and $device == desktop {
+    font-size: 60px;
+    line-height: 120%;
+  } @else if $size == h2 and $device == mobile {
+    font-size: 48px;
+    line-height: 120%;
+  }
+
+  // H3
+  @else if $size == h3 and $device == desktop {
+    font-size: 32px;
+    line-height: 100%;
+  } @else if $size == h3 and $device == mobile {
+    font-size: 28px;
+    line-height: 120%;
+  }
+
+  // h5
+  @else if $size == h5 and $device == desktop {
+    font-size: 18px;
+    line-height: 100%;
+  } @else if $size == h5 and $device == mobile {
+    font-size: 16px;
+    line-height: 100%;
+  }
+}
+
+// Raleway
+@mixin typeface-2($size: p2, $device: desktop) {
+  font-family: "Raleway", sans-serif;
+
+  // h1
+  @if $size == h1 and $device == desktop {
+    font-size: 64px;
+    line-height: 125%;
+  } @else if $size == h1 and $device == mobile {
+    font-size: 60px;
+    line-height: 125%;
+  }
+
+  // p1
+  @else if $size == p1 and $device == desktop {
+    font-size: 18px;
+    line-height: 130%;
+  } @else if $size == p1 and $device == mobile {
+    font-size: 18px;
+    line-height: 130%;
+  }
+
+  // a
+  @else if $size == a and $device == desktop {
+    font-size: 24px;
+    line-height: 130%;
+  } @else if $size == a and $device == mobile {
+    font-size: 20px;
+    line-height: 130%;
+  }
+}
+
+h1 {
+  color: blue;
+  font-weight: 400;
+  @include typeface-2(h1, desktop);
+  @include responsive(s) {
+    @include typeface-2(h1, mobile);
+  }
+}
+
+h2 {
+  color: tomato;
+  @include typeface-1(h2, desktop);
+  @include responsive(s) {
+    @include typeface-1(h2, mobile);
+  }
+}
+
+h3 {
+  color: tomato;
+  @include typeface-1(h3, desktop);
+  @include responsive(s) {
+    @include typeface-1(h3, mobile);
+  }
+}
+
+h4 {
+  color: tomato;
+  @include typeface-1(h4, desktop);
+  @include responsive(s) {
+    @include typeface-1(h4, mobile);
+  }
+}
+
+h5 {
+  text-transform: uppercase;
+  color: tomato;
+  @include typeface-1(h5, desktop);
+  @include responsive(s) {
+    @include typeface-1(h5, mobile);
+  }
+}
+
+p {
+  color: tomato;
+  @include typeface-2(p1, desktop);
+  @include responsive(s) {
+    @include typeface-2(p1, mobile);
+  }
+}
+
+.link {
+  color: tomato;
+  font-weight: bold;
+  @include typeface-2(a, desktop);
+  @include responsive(s) {
+    @include typeface-2(a, mobile);
+  }
+}
+
+.txt-italic {
+  font-weight: 800;
+  font-style: italic;
+}
+
+.bold {
+  font-weight: 700;
+}
