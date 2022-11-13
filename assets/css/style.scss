@@ -8,8 +8,10 @@
 
 @import "./scss/base";
 @import "./scss/typography";
+@import "./scss/spacing";
 @import "./scss/animations";
 @import "./scss/header";
+@import "./scss/hero";
 
 html {
   scroll-behavior: smooth;
